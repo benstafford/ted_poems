@@ -5,7 +5,7 @@ class TedPoem
   end
 
   def author
-    get_tweets.map(&:text)
+    get_tweets.map(&:text).reject {|tweet| tweet.match(/^RT/)}
   end
 
   private
